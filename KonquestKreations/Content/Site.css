@@ -25,7 +25,9 @@ select,
 textarea {
     max-width: 280px;
 }
-
+Mainimg1{
+ background-color:#fff056;
+}
 
 h2 {
     font-size: 24px;
@@ -44,7 +46,7 @@ h4 {
 }
 
 .jumbotron {
-    background-color: #f4511e;
+    background-color:#f4511e;
     color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
@@ -153,7 +155,7 @@ h4 {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: black;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
