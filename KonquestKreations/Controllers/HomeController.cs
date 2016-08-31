@@ -1,4 +1,5 @@
 ﻿using KonquestKreations.Models;
+using KonquestKreations.Mailers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace KonquestKreations.Controllers
                 enquiryForm.Message = enquiryFormEntry.Message;
                 db.EnquiryFormEntries.Add(enquiryForm);
                 db.SaveChanges();
+                var userMailer = new UserMailer();
+                userMailer.VerifyEmail();
                 return RedirectToAction("Index");
             }
             return View();
