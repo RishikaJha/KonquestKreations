@@ -16,14 +16,15 @@ namespace KonquestKreations.Controllers
             return View();
         }
         [HttpPost, ActionName("AddEnquiry")]
+       
         public ActionResult AddEnquiry(EnquiryFormEntry enquiryFormEntry)
         {
             if (ModelState.IsValid)
             {
                 var enquiryForm = new EnquiryFormEntry();
-                enquiryForm.Name = enquiryFormEntry.Name;
+                enquiryForm.Name = HttpUtility.HtmlEncode(enquiryFormEntry.Name);
                 enquiryForm.Email = enquiryFormEntry.Email;
-                enquiryForm.Message = enquiryFormEntry.Message;
+                enquiryForm.Message = HttpUtility.HtmlEncode(enquiryFormEntry.Message);
                 enquiryForm.PhoneNumber = enquiryFormEntry.PhoneNumber;
                 db.EnquiryFormEntries.Add(enquiryForm);
                 db.SaveChanges();
