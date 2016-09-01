@@ -1,4 +1,5 @@
-﻿using Mvc.Mailer;
+﻿using KonquestKreations.Models;
+using Mvc.Mailer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,22 @@ namespace KonquestKreations.Mailers
         {
             MasterName = "_Layout";
         }
-        public virtual MvcMailMessage VerifyEmail()
+        public virtual MvcMailMessage VerifyEmail(EnquiryFormEntry enquiryFormEntry)
         {
+            
+           
+            ViewBag.Name = "Customer Name : " + enquiryFormEntry.Name;
+            ViewBag.Message = "Message : " + enquiryFormEntry.Message;
+            ViewBag.Email = "Customer Email ID : "+ enquiryFormEntry.Email;
+            ViewBag.Phone = "Customer Contact No. : " + enquiryFormEntry.PhoneNumber;
             return Populate(x =>
             {
-                x.Subject = "Test subject";
                 x.ViewName = "VerifyEmail";
-                x.To.Add("divinerishika@gmail.com");
+                x.Subject = "Customer Enquiry for Konquest Kreations";
+                x.To.Add("KonquestKreation@gmail.com");
+                x.CC.Add("divinerishika@gmail.com");
+                x.CC.Add("pranav11.jha1987@gmail.com");
+
             });
         }
     }

@@ -1,14 +1,30 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        div {
+            font-family: Verdana, Arial, Sans-Serif;
+            font-size: 15px;
+        }
+
+        #mail-message {
+            padding: 10px;
+        }
+
+        #mail-footer {
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    @RenderBody()
+    <div id="mail-message">
+        @RenderBody()
+    </div>
+    <br />
+    <br />
+    <div id="mail-footer">
+        Best Regards,<br />
+        <a href="http://www.KonquestKreations.com">www.KonquestKreations.com</a>
+    </div>
 </body>
 </html>

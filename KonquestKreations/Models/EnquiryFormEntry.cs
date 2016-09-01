@@ -16,6 +16,9 @@ namespace KonquestKreations.Models
         [Required]
         public string Message { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required]
+        public long PhoneNumber { get; set; }
     } 
 }
