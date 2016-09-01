@@ -28,8 +28,7 @@ namespace KonquestKreations.Mailers
                 x.Subject = "Customer Enquiry for Konquest Kreations";
                 x.To.Add("KonquestKreation@gmail.com");
                 x.CC.Add("divinerishika@gmail.com");
-                x.CC.Add("pranav11.jha1987@gmail.com");
-
+              
             });
         }
     }
