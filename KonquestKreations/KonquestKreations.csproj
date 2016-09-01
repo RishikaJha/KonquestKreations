@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201609010734545_Rishika.Designer.cs">
       <DependentUpon>201609010734545_Rishika.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609011329001_Added Validations.cs" />
+    <Compile Include="Migrations\201609011329001_Added Validations.Designer.cs">
+      <DependentUpon>201609011329001_Added Validations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EnquiryFormEntry.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609010734545_Rishika.resx">
       <DependentUpon>201609010734545_Rishika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609011329001_Added Validations.resx">
+      <DependentUpon>201609011329001_Added Validations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
