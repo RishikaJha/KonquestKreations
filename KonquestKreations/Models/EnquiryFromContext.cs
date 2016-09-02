@@ -9,7 +9,7 @@ namespace KonquestKreations.Models
 {
     class EnquiryFromContext : DbContext
     {
-        public EnquiryFromContext() : base()
+        public EnquiryFromContext() : base("name=EnquiryFormDBConnectionString")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
