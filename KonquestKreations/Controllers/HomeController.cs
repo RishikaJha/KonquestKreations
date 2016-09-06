@@ -15,6 +15,7 @@ namespace KonquestKreations.Controllers
         {
             return View();
         }
+        [HandleError]
         [HttpPost, ActionName("AddEnquiry")]
        
         public ActionResult AddEnquiry(EnquiryFormEntry enquiryFormEntry)
@@ -26,13 +27,18 @@ namespace KonquestKreations.Controllers
                 enquiryForm.Email = enquiryFormEntry.Email;
                 enquiryForm.Message = HttpUtility.HtmlEncode(enquiryFormEntry.Message);
                 enquiryForm.PhoneNumber = enquiryFormEntry.PhoneNumber;
-                //db.EnquiryFormEntries.Add(enquiryForm);
-                //db.SaveChanges();
+                db.EnquiryFormEntries.Add(enquiryForm);
+                db.SaveChanges();
                 var userMailer = new UserMailer();
                 userMailer.VerifyEmail(enquiryForm).Send();
                 return RedirectToAction("Index");
             }
             return View("Index");
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }
